@@ -1,8 +1,24 @@
-import Vue from 'vue'
-import App from './App.vue'
+/*
+ * @Author: your name
+ * @Date: 2020-10-20 10:13:02
+ * @LastEditTime: 2020-10-20 16:31:26
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \vue-music\src\main.js
+ */
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
+import "normalize.css/normalize.css";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+Vue.use(ElementUI);
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  router,
+  store,
+  render: (h) => h(App),
+}).$mount("#app");
