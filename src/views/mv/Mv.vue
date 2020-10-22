@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-22 20:54:25
- * @LastEditTime: 2020-10-22 22:14:25
+ * @LastEditTime: 2020-10-22 22:18:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\views\mv\Video.vue
@@ -208,6 +208,7 @@ export default {
           display: block;
           max-height: 145px;
           border-radius: 8px;
+          cursor: pointer;
         }
       }
       .itemName {
