@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-20 14:30:33
- * @LastEditTime: 2020-10-21 10:47:05
+ * @LastEditTime: 2020-10-22 21:36:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\views\discover\childRouter\DiscoverMusic.vue
@@ -19,6 +19,9 @@
 import NavBar from "@/views/discover/childComps/NavBar";
 export default {
   name: "DiscoverMusic",
+  components: {
+    NavBar,
+  },
   data() {
     return {
       list: [
@@ -31,14 +34,8 @@ export default {
       ],
     };
   },
-  components: {
-    NavBar,
-  },
-  created() {},
 };
 </script>
 
 <style lang="less" scoped>
-.discover {
-}
 </style>

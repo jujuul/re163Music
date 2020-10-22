@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-20 10:39:22
- * @LastEditTime: 2020-10-21 21:36:24
+ * @LastEditTime: 2020-10-22 21:07:29
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\components\content\LeftMenu.vue
@@ -29,7 +29,7 @@ export default {
           title: "发现音乐",
         },
         {
-          link: "/mv",
+          link: "/mvVideo",
           title: "视频",
         },
         {
@@ -60,7 +60,6 @@ a {
   border-right: 1px solid #e1e1e1;
   padding-top: 6px;
   float: left;
-  height: 100%;
   a {
     padding: 0px 10px;
     margin: 3px 18px 2px 13px;

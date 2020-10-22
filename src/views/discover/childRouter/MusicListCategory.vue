@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-20 15:51:16
- * @LastEditTime: 2020-10-21 15:45:42
+ * @LastEditTime: 2020-10-22 15:59:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\views\discover\childRouter\MusicListCategory.vue
@@ -17,7 +17,7 @@
         <div class="img">
           <img :src="item.coverImgUrl" alt="" />
         </div>
-        <div class="name">{{ item.name }}</div>
+        <span class="name">{{ item.name }}</span>
       </div>
     </main>
     <footer class="footer">
@@ -77,7 +77,7 @@ export default {
   }
   .nav {
     height: 30px;
-    margin-bottom: 18px;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
@@ -98,6 +98,8 @@ export default {
     .list {
       width: 19%;
       .img {
+        margin-top: 12px;
+        margin-bottom: 8px;
         img {
           width: 100%;
           border-radius: 6px;
@@ -110,10 +112,9 @@ export default {
         margin-left: 2px;
         font-size: 14px;
         margin-bottom: 8px;
-        line-height: 20px;
+        line-height: 22px;
         overflow: hidden;
         text-overflow: ellipsis;
-        display: -webkit-box;
         white-space: pre-wrap;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;

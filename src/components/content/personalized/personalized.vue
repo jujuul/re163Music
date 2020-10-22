@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-20 19:31:45
- * @LastEditTime: 2020-10-20 23:07:33
+ * @LastEditTime: 2020-10-22 15:54:05
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\components\content\personalized\personalized.vue
@@ -10,7 +10,7 @@
   <div class="personalized">
     <div v-for="(item, index) in list" :key="index" class="list">
       <div><img :src="item.sPicUrl" alt="" /></div>
-      <div class="name">{{ item.name }}</div>
+      <span class="name">{{ item.name }}</span>
     </div>
   </div>
 </template>

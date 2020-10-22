@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-20 16:03:27
- * @LastEditTime: 2020-10-21 22:40:53
+ * @LastEditTime: 2020-10-22 16:12:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\components\common\scroll\scroll.vue
@@ -10,7 +10,8 @@
   <div class="swiper">
     <el-carousel :interval="4000" type="card" height="200px">
       <el-carousel-item v-for="(item, index) in banners" :key="index">
-        <img class="img" :src="item.imageUrl" alt="" />
+        <span class="type">{{ item.typeTitle }}</span>
+        <img class="img" :src="item.pic" alt="" />
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -25,15 +26,14 @@ export default {
     };
   },
   mounted() {
-    this.getBanner();
+    this.getDjBanner();
   },
   methods: {
-    getBanner() {
+    getDjBanner() {
       api
-        .getBanners()
+        .getDjBanner()
         .then((res) => {
-          //数据处理
-          this.banners = res.data.banners;
+          this.banners = res.data.data;
         })
         .catch((err) => console.log(err));
     },
@@ -42,10 +42,33 @@ export default {
 </script>
 <style lang="less" scoped>
 .swiper {
+  .type {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #cc4a4a;
+    font-size: 12px;
+    color: #fff;
+    padding: 4px 8px;
+  }
   .img {
     width: 100%;
     height: 100%;
     border-radius: 8px;
+  }
+  /deep/.is-active .el-carousel__button{
+    background-color: #ec4141;
+  }
+  /deep/.el-carousel__button {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #696969;
+    padding: 0;
+    margin: 0;
+    outline: 0;
   }
 }
 </style>

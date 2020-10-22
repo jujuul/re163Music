@@ -1,7 +1,15 @@
 /*
  * @Author: your name
  * @Date: 2020-10-20 11:18:39
- * @LastEditTime: 2020-10-21 12:19:19
+ * @LastEditTime: 2020-10-22 21:18:47
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \vue-music\src\router\index.js
+ */
+/*
+ * @Author: your name
+ * @Date: 2020-10-20 11:18:39
+ * @LastEditTime: 2020-10-22 20:53:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\router\index.js
@@ -19,6 +27,10 @@ const MusicRankList = () =>
 const ArtistCategory = () =>
   import("@/views/discover/childRouter/ArtistCategory");
 const NewSongs = () => import("@/views/discover/childRouter/NewSongs");
+const RadioStation = () => import("@/views/discover/childRouter/FM");
+const MvVideo = () => import("@/views/mv/MvVideo");
+const Video = () => import("@/views/mv/Video");
+const Mv = () => import("@/views/mv/Mv");
 
 Vue.use(VueRouter);
 
@@ -55,10 +67,28 @@ const routes = [
         path: "/discover/newsongs",
         component: NewSongs,
       },
-      // {
-      //   path: "/discover/fm",
-      //   component: FM,
-      // },
+      {
+        path: "/discover/fm",
+        component: RadioStation,
+      },
+    ],
+  },
+  {
+    path: "/mvVideo",
+    component: MvVideo,
+    children: [
+      {
+        path: "",
+        redirect: "/mvVideo/video",
+      },
+      {
+        path: "/mvVideo/video",
+        component: Video,
+      },
+      {
+        path: "/mvVideo/mv",
+        component: Mv,
+      },
     ],
   },
 ];

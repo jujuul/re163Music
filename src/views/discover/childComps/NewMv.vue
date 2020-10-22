@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-20 20:55:56
- * @LastEditTime: 2020-10-20 23:07:08
+ * @LastEditTime: 2020-10-22 15:51:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\views\discover\childComps\NewMv.vue
@@ -12,7 +12,7 @@
       <div class="img">
         <img :src="item.picUrl" alt="" />
       </div>
-      <div class="name">{{ item.name }}</div>
+      <span class="name">{{ item.name }}</span>
     </div>
   </div>
 </template>

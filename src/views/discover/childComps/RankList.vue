@@ -23,7 +23,7 @@
           </div>
         </li>
       </ul>
-      <div class="all">
+      <span class="all">
         查看全部&nbsp;<span
           ><svg
             t="1603185183112"
@@ -41,7 +41,7 @@
               fill="#2c2c2c"
             ></path></svg
         ></span>
-      </div>
+      </span>
     </div>
   </div>
 </template>

@@ -4,7 +4,7 @@
       <!--<div class="day"></div>-->
       <div v-for="(item, index) in list" :key="index" class="list">
         <div class="img"><img :src="item.picUrl" alt="" /></div>
-        <div class="title">{{ item.name }}</div>
+        <span class="title">{{ item.name }}</span>
       </div>
     </div>
   </div>
@@ -53,6 +53,7 @@ export default {
       .img {
         border-radius: 10px;
         overflow: hidden;
+        margin-bottom: 8px;
         img {
           width: 100%;
           height: 100%;
@@ -63,14 +64,12 @@ export default {
       .title {
         overflow: hidden;
         text-overflow: ellipsis;
-        display: -webkit-box;
         white-space: pre-wrap;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         font-size: 14px;
-        margin-top: 8px;
         margin-left: 2px;
-        line-height: 1.6em;
+        line-height: 24px;
         cursor: pointer;
       }
     }

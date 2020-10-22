@@ -36,6 +36,8 @@ export default {
   getSongList(params) {
     return http.get(`${resquest}/top/playlist?limit=10&order=new`, params);
   },
+  // 最新音乐页
+  // 最新音乐
   getNewSong(params) {
     return http.get(`${resquest}/top/song`, params);
   },
@@ -46,8 +48,19 @@ export default {
   getRecommendTopList(params) {
     return http.get(`${resquest}/top/playlist/highquality`, params);
   },
+
+  // mv页
+  // 全部mv
   getAllMv(params) {
     return http.get(`${resquest}/mv/all/?limit=48`, params);
+  },
+  // 最新mv
+  getNewMv(params) {
+    return http.get(`${resquest}/mv/first/?limit=8`, params);
+  },
+  // 网易出品mv
+  getWYMv(params) {
+    return http.get(`${resquest}/mv/exclusive/rcmd/?limit=8`, params);
   },
   getRecommendTypeList(params) {
     return http.get(`${resquest}/playlist/catlist`, params);
@@ -69,9 +82,20 @@ export default {
 
   // 歌手页
   // 全部歌手信息
-  getSingerList(params){
-    return http.get(`${resquest}/artist/list`, params);
+  getSingerList(params) {
+    return http.get(`${resquest}/artist/list?limit=42`, params);
   },
+
+  // 电台页
+  // 电台banner
+  getDjBanner(params) {
+    return http.get(`${resquest}/dj/banner`, params);
+  },
+  // 电台分类
+  getDjCateList(params) {
+    return http.get(`${resquest}/dj/catelist`, params);
+  },
+
   // 发现音乐页面下路由
   getRecommendMv(params) {
     // 获取推荐MV信息

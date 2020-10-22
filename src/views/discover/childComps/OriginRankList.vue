@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-21 16:41:31
- * @LastEditTime: 2020-10-21 21:39:03
+ * @LastEditTime: 2020-10-22 16:00:21
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\views\discover\childComps\MusicRankList.vue
@@ -23,7 +23,7 @@
           </div>
         </li>
       </ul>
-      <div class="all">
+      <span class="all">
         查看全部&nbsp;<span
           ><svg
             t="1603185183112"
@@ -41,7 +41,7 @@
               fill="#2c2c2c"
             ></path></svg
         ></span>
-      </div>
+      </span>
     </div>
   </div>
 </template>
