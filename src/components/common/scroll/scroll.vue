@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-20 16:03:27
- * @LastEditTime: 2020-10-21 22:40:53
+ * @LastEditTime: 2020-10-23 22:28:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\components\common\scroll\scroll.vue
@@ -46,6 +46,18 @@ export default {
     width: 100%;
     height: 100%;
     border-radius: 8px;
+  }
+  /deep/.is-active .el-carousel__button {
+    background-color: #ec4141;
+  }
+  /deep/.el-carousel__button {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #696969;
+    padding: 0;
+    margin: 0;
+    outline: 0;
   }
 }
 </style>

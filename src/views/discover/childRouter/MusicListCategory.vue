@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-20 15:51:16
- * @LastEditTime: 2020-10-22 15:59:20
+ * @LastEditTime: 2020-10-23 22:48:19
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\views\discover\childRouter\MusicListCategory.vue
@@ -14,7 +14,7 @@
     </nav>
     <main class="main">
       <div v-for="(item, index) in list" :key="index" class="list">
-        <div class="img">
+        <div class="img" @click="showMusicList(item.id)">
           <img :src="item.coverImgUrl" alt="" />
         </div>
         <span class="name">{{ item.name }}</span>
@@ -41,6 +41,10 @@ export default {
     this.getRecommendType();
   },
   methods: {
+    showMusicList(id) {
+      console.log(id);
+      this.$router.push("/musiclistDetail/" + id);
+    },
     getRecommendList() {
       api
         .getRecommendList()

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-22 20:50:57
- * @LastEditTime: 2020-10-22 21:44:54
+ * @LastEditTime: 2020-10-23 22:26:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\views\mv\MV.vue
@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       list: [
-        { link: "/mvVideo/video", name: "视频" },
+        // { link: "/mvVideo/video", name: "视频" },
         { link: "/mvVideo/mv", name: "MV" },
       ],
       newList: [],

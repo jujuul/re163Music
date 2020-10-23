@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-20 17:14:27
+ * @LastEditTime: 2020-10-23 22:35:14
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \vue-music\src\components\content\musiclist\musiclist.vue
+-->
 <template>
   <div class="recommend">
     <div class="tuijian">
@@ -26,7 +34,6 @@ export default {
       api
         .getRecommend()
         .then((res) => {
-          //数据处理
           this.list = res.data.result;
         })
         .catch((err) => console.log(err));
