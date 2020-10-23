@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-20 10:42:46
- * @LastEditTime: 2020-10-22 22:21:26
+ * @LastEditTime: 2020-10-23 16:11:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\components\content\TabBar.vue
@@ -11,8 +11,8 @@
     <div class="img">
       <img src="../../assets/logo.png" alt="" />
     </div>
-    <div class="left"></div>
-    <div class="right"></div>
+    <div class="left" @click="back()"></div>
+    <div class="right" @click="go()"></div>
     <Search />
     <div class="info">
       <div class="avatar">
@@ -176,6 +176,12 @@ export default {
         return false;
       }
       screenfull.toggle();
+    },
+    go() {
+      this.$router.go(1);
+    },
+    back() {
+      this.$router.go(-1);
     },
   },
 };

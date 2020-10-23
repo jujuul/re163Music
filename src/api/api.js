@@ -139,17 +139,19 @@ export default {
   },
 
   // mv详情页路由
-  getMvDetails(params) {
+  getMvDetail(params) {
     // 获取mv详细信息
-    return http.get(`${resquest}/mv/detail`, params);
+    return http.get(`${resquest}/mv/detail?mvid=${params}`);
   },
+  // mv 地址路径
   getMvUrl(params) {
     // 获取mvUrl路径
-    return http.get(`${resquest}/mv/url`, params);
+    return http.get(`${resquest}/mv/url?id=${params}`);
   },
+  // 相似 mv
   getSimMv(params) {
     // 获取mv相关视频
-    return http.get(`${resquest}/simi/mv`, params);
+    return http.get(`${resquest}/simi/mv?mvid=${params}`);
   },
   getMvInfo(params) {
     // 获取mv点赞转发评论数数据
@@ -157,7 +159,7 @@ export default {
   },
   getMvComment(params) {
     // 获取mv评论数据
-    return http.get(`${resquest}/comment/mv`, params);
+    return http.get(`${resquest}/comment/mv?id=${params}`);
   },
   getMvCommentPage(params) {
     // 获取mv评论数据

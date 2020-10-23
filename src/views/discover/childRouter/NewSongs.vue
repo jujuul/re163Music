@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-21 12:19:33
- * @LastEditTime: 2020-10-22 20:41:56
+ * @LastEditTime: 2020-10-23 11:05:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\views\discover\childRouter\NewSongs.vue
@@ -16,7 +16,7 @@
     <main>
       <ul>
         <li v-for="(item, index) in list" :key="index">
-          <div class="number">{{ index }}</div>
+          <div class="number">{{ index + 1 }}</div>
           <div class="img">
             <img :src="item.album.picUrl" alt="" />
           </div>
@@ -54,8 +54,7 @@ export default {
       api
         .getNewSong()
         .then((res) => {
-          this.list = res.data.data;
-          console.log(res);
+          this.list = res.data.data.slice(0, 50);
         })
         .catch((err) => {
           console.log(err);

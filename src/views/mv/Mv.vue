@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-22 20:54:25
- * @LastEditTime: 2020-10-22 22:18:03
+ * @LastEditTime: 2020-10-23 12:48:15
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\views\mv\Video.vue
@@ -28,24 +28,7 @@
           ></path></svg
       ></span>
     </div>
-    <div class="newList">
-      <div v-for="(item, index) in newList" :key="index" class="new">
-        <div class="img">
-          <img :src="item.cover" alt="" />
-        </div>
-        <span class="itemName">
-          {{ item.name }}
-        </span>
-        <br />
-        <span
-          class="artistName"
-          v-for="(item, index) in item.artists"
-          :key="index"
-        >
-          {{ item.name }}
-        </span>
-      </div>
-    </div>
+    <newMv />
     <div class="text">
       推荐MV
       <span
@@ -66,24 +49,7 @@
           ></path></svg
       ></span>
     </div>
-    <div class="newList">
-      <div v-for="(item, index) in hotList" :key="index" class="new">
-        <div class="img">
-          <img :src="item.picUrl" alt="" />
-        </div>
-        <span class="itemName">
-          {{ item.name }}
-        </span>
-        <br />
-        <span
-          class="artistName"
-          v-for="(item, index) in item.artists"
-          :key="index"
-        >
-          {{ item.name }}
-        </span>
-      </div>
-    </div>
+    <recomdMv />
     <div class="text">
       网易出品
       <span
@@ -104,75 +70,26 @@
           ></path></svg
       ></span>
     </div>
-    <div class="newList">
-      <div v-for="(item, index) in wyList" :key="index" class="new">
-        <div class="img">
-          <img :src="item.cover" alt="" />
-        </div>
-        <span class="itemName">
-          {{ item.name }}
-        </span>
-        <br />
-        <span
-          class="artistName"
-          v-for="(item, index) in item.artists"
-          :key="index"
-        >
-          {{ item.name }}
-        </span>
-      </div>
-    </div>
+    <wyMv />
   </div>
 </template>
 
 <script>
 import api from "@/api/api";
+import newMv from "@/views/mv/childComps/newMv";
+import recomdMv from "@/views/mv/childComps/recomdMv";
+import wyMv from "@/views/mv/childComps/wyMv";
 export default {
+  components: {
+    newMv,
+    recomdMv,
+    wyMv,
+  },
   data() {
-    return {
-      newList: [],
-      hotList: [],
-      wyList: [],
-    };
+    return {};
   },
-  mounted() {
-    this.getNewMv();
-    this.getRecommendMv();
-    this.getWYMv();
-  },
-  methods: {
-    getNewMv() {
-      api
-        .getNewMv()
-        .then((res) => {
-          this.newList = res.data.data;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    getRecommendMv() {
-      api
-        .getRecommendMv()
-        .then((res) => {
-          this.hotList = res.data.result;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    getWYMv() {
-      api
-        .getWYMv()
-        .then((res) => {
-          this.wyList = res.data.data;
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-  },
+  mounted() {},
+  methods: {},
 };
 </script>
 
@@ -189,46 +106,6 @@ export default {
     cursor: pointer;
     &:hover {
       color: #000;
-    }
-  }
-  .newList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    .new {
-      width: 24%;
-      max-width: 265px;
-      margin-bottom: 20px;
-      .img {
-        width: 100%;
-        max-height: 145px;
-        margin-bottom: 4px;
-        img {
-          width: 100%;
-          display: block;
-          max-height: 145px;
-          border-radius: 8px;
-          cursor: pointer;
-        }
-      }
-      .itemName {
-        height: 22px;
-        line-height: 22px;
-        font-size: 13px;
-        color: #333;
-        cursor: pointer;
-        &:hover {
-          color: #000;
-        }
-      }
-      .artistName {
-        font-size: 12px;
-        color: #999;
-        cursor: pointer;
-        &:hover {
-          color: #333;
-        }
-      }
     }
   }
 }

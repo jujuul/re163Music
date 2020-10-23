@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-20 11:18:39
- * @LastEditTime: 2020-10-22 21:18:47
+ * @LastEditTime: 2020-10-23 22:13:52
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\router\index.js
@@ -31,6 +31,7 @@ const RadioStation = () => import("@/views/discover/childRouter/FM");
 const MvVideo = () => import("@/views/mv/MvVideo");
 const Video = () => import("@/views/mv/Video");
 const Mv = () => import("@/views/mv/Mv");
+const PlayMv = () => import("@/views/mv/PlayMv");
 
 Vue.use(VueRouter);
 
@@ -90,6 +91,10 @@ const routes = [
         component: Mv,
       },
     ],
+  },
+  {
+    path: "/mvVideo/mv/:id",
+    component: PlayMv,
   },
 ];
 
