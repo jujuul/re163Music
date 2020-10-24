@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-23 22:32:56
- * @LastEditTime: 2020-10-24 18:34:18
+ * @LastEditTime: 2020-10-24 23:19:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\views\musicListDetail\musicListDetail.vue
@@ -28,7 +28,7 @@
         <comment />
       </div>
       <div v-else-if="index == 2">
-        <collect />
+        <collect :id="id" />
       </div>
     </div>
   </div>

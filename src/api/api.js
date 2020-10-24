@@ -116,6 +116,11 @@ export default {
     // 获取歌曲详细信息
     return http.get(`${resquest}/song/detail`, params);
   },
+  // 获取收藏该歌单的人
+  getCollection(params) {
+    // 获取收藏该歌单的人
+    return http.get(`${resquest}/playlist/subscribers`, params);
+  },
   getMusicComments(params) {
     // 获取歌单评论
     return http.get(`${resquest}/comment/playlist`, params);

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-24 18:08:05
- * @LastEditTime: 2020-10-24 23:08:36
+ * @LastEditTime: 2020-10-24 23:21:48
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\views\musicListDetail\childComps\playList.vue
@@ -108,7 +108,6 @@ export default {
         .getMusicDetails({ ids: id })
         .then((res) => {
           this.songArr = res.data.songs;
-          console.log(res.data);
         })
         .catch((err) => {
           console.log(err);
