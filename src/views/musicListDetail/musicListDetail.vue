@@ -1,10 +1,75 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-23 22:32:56
+ * @LastEditTime: 2020-10-24 18:34:18
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \vue-music\src\views\musicListDetail\musicListDetail.vue
+-->
+<!--
+ * @Author: your name
+ * @Date: 2020-10-23 22:32:56
+ * @LastEditTime: 2020-10-24 18:33:13
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \vue-music\src\views\musicListDetail\musicListDetail.vue
+-->
 <template>
-  <div>歌单</div>
+  <div class="musicListDetail">
+    <div class="info">
+      <musicInfo :id="id" />
+      <musicTab :id="id" @childFn="parentFn" />
+    </div>
+    <div class="detail">
+      <div v-if="index == 0">
+        <playList />
+      </div>
+      <div v-else-if="index == 1">
+        <comment />
+      </div>
+      <div v-else-if="index == 2">
+        <collect />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+import musicInfo from "@/views/musicListDetail/childComps/musicInfo";
+import musicTab from "@/views/musicListDetail/childComps/musicTab";
+import playList from "@/views/musicListDetail/childComps/playList";
+import comment from "@/views/musicListDetail/childComps/comment";
+import collect from "@/views/musicListDetail/childComps/collect";
+export default {
+  components: {
+    musicInfo,
+    musicTab,
+    playList,
+    collect,
+    comment,
+  },
+  data() {
+    return {
+      id: String,
+      index: 0,
+    };
+  },
+  created() {
+    this.id = this.$route.params.id;
+  },
+  methods: {
+    parentFn(index) {
+      this.index = index;
+    },
+  },
+};
 </script>
 
-<style>
+<style lang="less" scoped>
+.musicListDetail {
+  padding-top: 32px;
+  .info {
+    margin-left: 32px;
+  }
+}
 </style>

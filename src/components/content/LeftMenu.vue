@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-20 10:39:22
- * @LastEditTime: 2020-10-22 21:07:29
+ * @LastEditTime: 2020-10-24 22:50:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\components\content\LeftMenu.vue
@@ -57,7 +57,6 @@ a {
 .left {
   box-sizing: border-box;
   width: 198px;
-  border-right: 1px solid #e1e1e1;
   padding-top: 6px;
   float: left;
   a {

@@ -111,6 +111,7 @@ export default {
     // 获取歌曲标签
     return http.get(`${resquest}/top/playlist`, params);
   },
+  // 获取歌曲详情
   getMusicDetails(params) {
     // 获取歌曲详细信息
     return http.get(`${resquest}/song/detail`, params);
@@ -135,7 +136,7 @@ export default {
   // 歌单详情页下路由
   getUserDetails(params) {
     // 获取用户详细信息
-    return http.get(`${resquest}/user/detail`, params);
+    return http.get(`${resquest}/user/detail?uid=${params}`, params);
   },
 
   // mv详情页路由
