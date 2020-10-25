@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-24 15:31:12
- * @LastEditTime: 2020-10-24 21:30:01
+ * @LastEditTime: 2020-10-25 16:17:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\views\musicListDetail\childComps\musicTab.vue
@@ -65,6 +65,7 @@ export default {
 .tab {
   margin-top: 42px;
   display: flex;
+  margin-bottom: 24px;
   div {
     padding-bottom: 4px;
     margin-right: 20px;

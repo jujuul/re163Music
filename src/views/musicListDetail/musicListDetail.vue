@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-23 22:32:56
- * @LastEditTime: 2020-10-24 23:19:35
+ * @LastEditTime: 2020-10-25 16:23:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\views\musicListDetail\musicListDetail.vue
@@ -25,7 +25,7 @@
         <playList />
       </div>
       <div v-else-if="index == 1">
-        <comment />
+        <comment :id="id" />
       </div>
       <div v-else-if="index == 2">
         <collect :id="id" />
@@ -35,10 +35,11 @@
 </template>
 
 <script>
+import api from "@/api/api";
 import musicInfo from "@/views/musicListDetail/childComps/musicInfo";
 import musicTab from "@/views/musicListDetail/childComps/musicTab";
 import playList from "@/views/musicListDetail/childComps/playList";
-import comment from "@/views/musicListDetail/childComps/comment";
+import comment from "@/components/common/comment/comment";
 import collect from "@/views/musicListDetail/childComps/collect";
 export default {
   components: {
@@ -57,9 +58,20 @@ export default {
   created() {
     this.id = this.$route.params.id;
   },
+  mounted() {
+    this.getPlayListDetails(this.id);
+  },
   methods: {
     parentFn(index) {
       this.index = index;
+    },
+    getPlayListDetails(id) {
+      api
+        .getPlayListDetails(id)
+        .then((res) => {})
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };

@@ -107,8 +107,8 @@ export default {
   getPlayListDetails(params) {
     return http.get(`${resquest}/playlist/detail?id=${params}`);
   },
+  // 获取歌单（可根据传入tag切换）
   getMusicTag(params) {
-    // 获取歌曲标签
     return http.get(`${resquest}/top/playlist`, params);
   },
   // 获取歌曲详情

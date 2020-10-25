@@ -1,18 +1,62 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-20 10:42:46
- * @LastEditTime: 2020-10-23 16:11:06
+ * @LastEditTime: 2020-10-25 18:01:25
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\components\content\TabBar.vue
 -->
 <template>
   <div class="wrapper">
-    <div class="img">
+    <div class="img" @click="index">
       <img src="../../assets/logo.png" alt="" />
     </div>
-    <div class="left" @click="back()"></div>
-    <div class="right" @click="go()"></div>
+    <div class="left" @click="back()">
+      <svg
+        t="1603619556062"
+        class="icon"
+        viewBox="0 0 1024 1024"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        p-id="3110"
+        width="16"
+        height="16"
+      >
+        <path
+          d="M658.907 850.8L320.425 512.318l45.354-45.353L704.26 805.446z"
+          fill="#e6e6e6"
+          p-id="3111"
+        ></path>
+        <path
+          d="M704.983 218.24L365.788 557.436l-45.354-45.353L659.63 172.887z"
+          fill="#e6e6e6"
+          p-id="3112"
+        ></path>
+      </svg>
+    </div>
+    <div class="right" @click="go()">
+      <svg
+        t="1603619618069"
+        class="icon"
+        viewBox="0 0 1024 1024"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        p-id="4047"
+        width="16"
+        height="16"
+      >
+        <path
+          d="M680.96 536.32L294.826667 149.76C281.6 136.533333 281.6 115.2 294.826667 101.546667c13.226667-13.226667 34.986667-13.226667 48.213333 0l386.133333 386.133333c13.226667 13.226667 13.226667 34.986667 0 48.213333-13.226667 13.653333-34.986667 13.653333-48.213333 0.426667z"
+          fill="#ffffff"
+          p-id="4048"
+        ></path>
+        <path
+          d="M294.826667 874.24l386.133333-386.133333c13.226667-13.226667 34.986667-13.226667 48.213333 0 13.226667 13.226667 13.226667 34.986667 0 48.213333l-386.133333 386.133333c-13.226667 13.226667-34.986667 13.226667-48.213333 0-13.226667-13.653333-13.226667-34.986667 0-48.213333z"
+          fill="#ffffff"
+          p-id="4049"
+        ></path>
+      </svg>
+    </div>
     <Search />
     <div class="info">
       <div class="avatar">
@@ -171,6 +215,11 @@ export default {
     };
   },
   methods: {
+    index() {
+      if (this.$route.path !== "/discover/individ") {
+        this.$router.push("/");
+      }
+    },
     buttoncli() {
       if (!screenfull.enabled) {
         return false;
@@ -199,11 +248,15 @@ export default {
   color: rgba(255, 255, 255, 0.8);
   .img {
     width: 198px;
+    cursor: pointer;
   }
   .left {
     margin-left: 30px;
     width: 24px;
     height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #d93b3b;
     border-radius: 50%;
     cursor: pointer;
@@ -212,6 +265,9 @@ export default {
     margin-left: 10px;
     width: 24px;
     height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #e63f3f;
     border-radius: 50%;
     cursor: pointer;

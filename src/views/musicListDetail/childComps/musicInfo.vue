@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-24 11:24:49
- * @LastEditTime: 2020-10-24 22:04:21
+ * @LastEditTime: 2020-10-25 21:27:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\views\musicListDetail\childComps\musicInfo.vue
@@ -21,7 +21,7 @@
           <img :src="profile.avatarUrl" alt="" />
         </div>
         <div class="nickName">{{ profile.nickname }}</div>
-        <div class="createTime">{{ profile.createTime }}创建</div>
+        <div class="createTime">{{ playList.createTime | pListCT }}创建</div>
       </div>
       <div class="opt">
         <div class="allPlay">
@@ -163,7 +163,11 @@
         </div>
       </div>
       <div class="songs">
-        歌曲：{{ playList.trackCount }} 播放：{{ playList.playCount }}
+        歌曲：{{ playList.trackCount }}
+        <span v-if="playList.playCount > 10000"
+          >播放：{{ parseInt(playList.playCount / 10000) }}万</span
+        >
+        <span v-else>{{ playList.playCount }}</span>
       </div>
       <div class="des">简介：{{ playList.description }}</div>
     </div>
@@ -368,7 +372,7 @@ export default {
   }
   .des {
     margin-top: 12px;
-    width: 400px;
+    width: 600px;
     font-size: 13px;
     white-space: nowrap;
     overflow: hidden;

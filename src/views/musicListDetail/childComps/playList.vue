@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-24 18:08:05
- * @LastEditTime: 2020-10-24 23:21:48
+ * @LastEditTime: 2020-10-25 15:56:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-music\src\views\musicListDetail\childComps\playList.vue
@@ -65,7 +65,7 @@
         <div v-for="(item, index) in item.ar" :key="index">{{ item.name }}</div>
       </div>
       <div class="album">{{ item.al.name }}</div>
-      <div class="time">{{item.dt}}</div>
+      <div class="time">{{ item.dt }}</div>
     </div>
   </div>
 </template>
